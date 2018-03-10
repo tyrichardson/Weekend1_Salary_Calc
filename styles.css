@@ -19,6 +19,12 @@ h1 {
 
 }
 
+h4 {
+  margin: 40px 0px 5px 0px;
+  padding: 0px;
+
+}
+
 .addDiv {
   margin: 0px;
   padding: 0px;
@@ -34,6 +40,44 @@ ul {
 li {
   float: left;
   margin:0px 5px 2.5px 0px;
+}
+
+#submitButton {
+  float: right;
+  background-color: CornflowerBlue;
+  color: white;
+}
+
+table {
+    border-collapse: collapse;
+    border: 1px solid black;
+}
+
+th,td {
+    border: 1px solid black;
+}
+
+table.a {
+    table-layout: auto;
+    width: auto;
+}
+
+tr:nth-child(even) {
+  background-color: White;
+  color: black;
+}
+
+tr:nth-child(odd) {
+  background-color: Azure;
+  color: black;
+}
+
+.tdSpanBottom {
+  background-color: CornflowerBlue;
+}
+
+#total {
+float: right;
 }
 
 .tooltip {

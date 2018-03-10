@@ -11,16 +11,50 @@
   <div class="bodyDiv">
     <h1>Salary Calculator</h1>
 
-    <div class="AddDiv">
-      <h3>Add Employee</h3>
+    <div class="addDiv">
+      <h4>Add Employee</h4>
         <ul>
+
           <li><input type="text" id="firstName"/></li>
           <li><input type="text" id="lastName"/></li>
           <li><input type="text" id="ID"/></li>
           <li><input type="text" id="Title"/></li>
           <li><input type="text" id="Annual Salary"/></li>
+          <br>
+          <li><button id="submitButton">Submit</li>
+
         </ul>
-    </div>
+    </div><!--end addDiv-->
+
+    <div class="tableDiv">
+      <h4>Employees</h4>
+
+      <table class = "a">
+        <tr>
+          <th>First Name</th>
+          <th>Last Name</th>
+          <th>ID</th>
+          <th>Title</th>
+          <th>Annual Salary</th>
+        </tr>
+        <tr>
+          <td class = "tdFirstName"></td>
+          <td class = "tdLastName"></td>
+          <td class = "tdID"></td>
+          <td class = "tdTitle"></td>
+          <td class = "tdAnnualSalary"></td>
+          <td class = "tdSpanBottom"> </td>
+        </tr>
+
+      </table>
+
+    <div class="totalDiv">
+      <h4 id = "total">Total Monthly: $</h4>
+
+    </div><!--end totalDiv-->
+
+
+    </div><!--end tableDiv-->
 
 
 

@@ -2,7 +2,13 @@ console.log('ty js');
 
 
 
+$(document).ready(readyNow);
 
+function readyNow() {
+console.log('in readyNow function');
+//buttonClick();
+
+}
 
 
 
@@ -11,12 +17,9 @@ console.log('ty js');
 //
 // let redClicks = 0;
 //
-// $(document).ready(readyNow);
 //
-// function readyNow() {
-//   console.log('in readyNow function');
-//   buttonClick();
-// }
+//
+//
 //
 // function buttonClick(){
 //   $('#redButton').on('click', redButtonClicked);
