@@ -55,27 +55,18 @@ table {
 
 th,td {
     border: 1px solid black;
-}
-
-table.a {
-    table-layout: auto;
-    width: auto;
+    width: 132px;
 }
 
 tr:nth-child(even) {
-  background-color: White;
-  color: black;
-}
-
-tr:nth-child(odd) {
   background-color: Azure;
   color: black;
 }
 
-.tdSpanBottom {
-  background-color: CornflowerBlue;
+tr:nth-child(odd) {
+  background-color: white;
+  color: black;
 }
-
 
 .total {
   float: right;

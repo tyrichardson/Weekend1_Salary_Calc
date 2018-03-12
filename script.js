@@ -48,7 +48,7 @@ function submitButtonClicked() {
     console.log('The updated global employeeArray: ', employeeArray);
 
   calculateMonthly();
-  //updateDom();
+  updateTableOnDom();
 
 }
 
@@ -71,6 +71,7 @@ function submitButtonClicked() {
   }
 
     function updateTotalOnDom(){
+        console.log('updateTotalOnDom function entered');
       $('#total').empty();
       $('#total').append(monthlySalaries);
         if(monthlySalaries > 20000){
@@ -78,94 +79,30 @@ function submitButtonClicked() {
         }
     }
 
-
-
-    // totalMonthly = totalMonthly;
-    // console.log('totalMonthly', totalMonthly);
-    //   $('#total').append(totalMonthly);
-
-
   //populate table on the DOM with inputted values, append to table
-  //
-  // function updateDom(){
-  //   console.log('updateDom function entered');
-  //
-  //     let tableHeader ='<tr class = "tableHeader"><th>First Name</th><th>Last Name</th><th>ID</th><th>Title</th><th>Annual Salary</th></tr>';
-  //
-  //   let outputElement = $('.table');
-  //   outputElement.empty();
-  //
-  //   for(let row of employeeArray){
-  //     console.log('employee in for...of loop:', row);
-  //     $('.table').append(tableHeader + '<tr><td>' + row.firstName + '</td><td>' + row.lastName + '</td><td>' + (row.id) + '</td><td>' + row.title + '</td><td>' + (row.annualSalary +'</td></tr>'));
-  //
-  //     console.log('typeof row.annualSalary:', typeof row.annualSalary);
-  //
-  //     //clear user input
-  //     $('#firstName').val('');
-  //     $('#lastName').val('');
-  //     $('#id').val('');
-  //     $('#title').val('');
-  //     $('#annualSalary').val('');
-  //
-  //   }
-  // }
+  function updateTableOnDom(){
+    console.log('updateTableOnDom function entered');
 
+      // let tableHeader ='<tr class = "tableHeader"><th>First Name</th><th>Last Name</th><th>ID</th><th>Title</th><th>Annual Salary</th></tr>';
 
+    let outputElement = $('.table');
+    outputElement.empty();
 
+    for(let row of employeeArray){
+      console.log('employee in for...of loop:', row);
+      $('.table').append('<tr><td>' + row.firstName + '</td><td>' + row.lastName + '</td><td>' + (row.id) + '</td><td>' + row.title + '</td><td>' + (row.annualSalary +'</td></tr>'));
 
-        // $('.tdFirstName').text(firstName);
-        // $('.tdLastName').text(lastName);
-        // $('.tdID').text(id);
-        // $('.tdTitle').text(title);
-        // $('.tdAnnualSalary').text(annualSalary);
+      console.log('typeof row.annualSalary:', typeof row.annualSalary);
 
-    //access the inputted employee data
-    // let firstName = $('#firstName').val();
-    // let lastName = $('#lastName').val();
-    // let id = $('#id').val();
-    // let title = $('#title').val();
-    // let annualSalary = $('#annualSalary').val();
-    // console.log('values from clicking submitButton: ',firstName, lastName, id, title, annualSalary);
+      //clear user input
+      $('#firstName').val('');
+      $('#lastName').val('');
+      $('#id').val('');
+      $('#title').val('');
+      $('#annualSalary').val('');
 
-//
-// }
-//
-// function calculateTotal(){
-//   for(let salary of employeeArray){
-//     console.log('for loop salary', salary.annualSalary);
-//     salaryNumber = (salary.annualSalary);
-//     console.log(typeof salaryNumber);
-//     convertedToNumber = Number(salaryNumber);
-//     console.log(convertedToNumber);
-//     totalSalaries += salaryNumber;
-//
-//   }//end for of loop
-//   console.log('totalSalaries', totalSalaries );
-//   clearUserInput();
-//
-// }//end calculateTotal
-//
-// function clearUserInput(){
-//   firstName = $('#firstName').val('');
-//   lastName = $('#lastName').val('');
-//   id = $('#id').val('');
-//   title = $('#title').val('');
-//   annualSalary = $('#annualSalary').val('');
-// }
-
-
-// function addDataToTableRowsOnDom(){
-//
-//
-//   }
-// }
-
-// $('.tdFirstName').text(firstName);
-// $('.tdLastName').text(lastName);
-// $('.tdID').text(id);
-// $('.tdTitle').text(title);
-// $('.tdAnnualSalary').text(annualSalary);
+    }
+  }
 
 //
 // function redCounter(){
