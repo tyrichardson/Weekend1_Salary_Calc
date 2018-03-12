@@ -103,10 +103,3 @@ function submitButtonClicked() {
 
     }
   }
-
-//
-// function redCounter(){
-//   console.log(redClicks);
-//   $('#redCounter').empty();
-//   $('#redCounter').append('Red count: ' + redClicks);
-// }
