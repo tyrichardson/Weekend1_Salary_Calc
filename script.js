@@ -1,4 +1,4 @@
-console.log('ty js');
+  console.log('ty js');
 
 //declare global variables
 let employeeArray = [];
@@ -20,19 +20,19 @@ $(document).ready(readyNow);
 
 //kickoff the application
 function readyNow() {
-  console.log('entered readyNow function');
+    console.log('entered readyNow function');
   buttonClick();
 }
 
 //define the listerner
 function buttonClick(){
-  console.log('entered the listener: buttonClick function');
+    console.log('entered the listener: buttonClick function');
   $('#submitButton').on('click', submitButtonClicked);
  }
 
 //define the actions triggered by the event
 function submitButtonClicked() {
-  console.log('I clicked submitButton');
+    console.log('I clicked submitButton');
 
   let firstName = $('#firstName').val();
   let lastName = $('#lastName').val();
@@ -42,53 +42,74 @@ function submitButtonClicked() {
 
   //create new instance of the Employee class with inputted employee data
   addEmployee = new Employee(firstName, lastName, id, title, annualSalary);
-  console.log('New class employee object: ', addEmployee);
 
   //populate the global employeeArray with the inputted values
   employeeArray.push(addEmployee);
-  console.log('The update to global employeeArray: ', employeeArray);
+    console.log('The updated global employeeArray: ', employeeArray);
 
   calculateMonthly();
-  updateDom();
+  //updateDom();
 
 }
 
   function calculateMonthly(){
-    console.log('entered calculateMonthly fuction');
-    console.log(typeof employeeArray[0].annualSalary);
+      console.log('entered calculateMonthly fuction');
+    let loopValue = 0;
     for (i = 0; i < employeeArray.length; i++){
-    monthlySalaries += (parseInt(employeeArray[i].annualSalary));
+    loopValue += (parseInt(employeeArray[i].annualSalary));
+      console.log('did the strings turn into numbers?', typeof loopValue);
 
     }
+      console.log('the loopValue: ', loopValue);
+    totalMonthly = loopValue * 1000 / 12;
+      console.log('the totalMonthly: ', totalMonthly);
+    monthlySalaries = totalMonthly.toFixed();
+      console.log('monthlySalaries on DOM...the totalMonthly toFixed: ', monthlySalaries);
 
-    totalMonthly = monthlySalaries;
-    totalMonthly = totalMonthly;
-    console.log('totalMonthly', totalMonthly);
-      $('#total').append(totalMonthly);
+    updateTotalOnDom();
+
   }
+
+    function updateTotalOnDom(){
+      $('#total').empty();
+      $('#total').append(monthlySalaries);
+        if(monthlySalaries > 20000){
+          $('#total').css('color', 'red');
+        }
+    }
+
+
+
+    // totalMonthly = totalMonthly;
+    // console.log('totalMonthly', totalMonthly);
+    //   $('#total').append(totalMonthly);
+
 
   //populate table on the DOM with inputted values, append to table
-
-  function updateDom(){
-    console.log('updateDom function entered');
-    let tableHeader ='<tr class = "tableHeader"><th>First Name</th><th>Last Name</th><th>ID</th><th>Title</th><th>Annual Salary</th></tr>';
-    let outputElement = $('.table');
-    outputElement.empty();
-    for(let row of employeeArray){
-      console.log('employee in for...of loop:', row);
-  $('.table').append(tableHeader + '<tr><td>' + row.firstName + '</td><td>' + row.lastName + '</td><td>' + (row.id) + '</td><td>' + row.title + '</td><td>' + (row.annualSalary +'</td></tr>'));
-
-  console.log('typeof row.annualSalary:', typeof row.annualSalary);
-
-    //clear user input
-    $('#firstName').val('');
-    $('#lastName').val('');
-    $('#id').val('');
-    $('#title').val('');
-    $('#annualSalary').val('');
-
-  }
-}
+  //
+  // function updateDom(){
+  //   console.log('updateDom function entered');
+  //
+  //     let tableHeader ='<tr class = "tableHeader"><th>First Name</th><th>Last Name</th><th>ID</th><th>Title</th><th>Annual Salary</th></tr>';
+  //
+  //   let outputElement = $('.table');
+  //   outputElement.empty();
+  //
+  //   for(let row of employeeArray){
+  //     console.log('employee in for...of loop:', row);
+  //     $('.table').append(tableHeader + '<tr><td>' + row.firstName + '</td><td>' + row.lastName + '</td><td>' + (row.id) + '</td><td>' + row.title + '</td><td>' + (row.annualSalary +'</td></tr>'));
+  //
+  //     console.log('typeof row.annualSalary:', typeof row.annualSalary);
+  //
+  //     //clear user input
+  //     $('#firstName').val('');
+  //     $('#lastName').val('');
+  //     $('#id').val('');
+  //     $('#title').val('');
+  //     $('#annualSalary').val('');
+  //
+  //   }
+  // }
 
 
 
